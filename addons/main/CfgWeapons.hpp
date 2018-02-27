@@ -8,7 +8,17 @@ class CfgWeapons {
 	
 	class LIB_P08: LIB_P38 {
         ACE_barrelTwist = 233.68;
-        ACE_barrelLength = 10.2;
+        ACE_barrelLength = 100;
+    };
+	
+	class LIB_M1896: LIB_PISTOL {
+        ACE_barrelTwist = 203.2;
+        ACE_barrelLength = 99;
+    };
+	
+	class LIB_WaltherPPK: LIB_PISTOL {
+        ACE_barrelTwist = 254;
+        ACE_barrelLength = 83;
     };
 	
     class LIB_TT33: LIB_PISTOL {
@@ -37,16 +47,26 @@ class CfgWeapons {
     };
 
     class LIB_MP40: LIB_SMG {
-        ACE_barrelTwist = 392; //unknown set same as thompson
+        ACE_barrelTwist = 203.2;
         ACE_barrelLength = 251;
     };
 
+	class LIB_MP38: LIB_SMG {
+        ACE_barrelTwist = 203.2;
+        ACE_barrelLength = 251;
+    };
+	
     class LIB_PPSh41_m: LIB_SMG {
         ACE_barrelTwist = 392; //unknown set same as thompson
         ACE_barrelLength = 269;
     };
 
     class LIB_M1A1_Thompson: LIB_SMG {
+        ACE_barrelTwist = 392;
+        ACE_barrelLength = 270;
+    };
+	
+	class LIB_M3_GreaseGun: LIB_SMG {
         ACE_barrelTwist = 392;
         ACE_barrelLength = 270;
     };
@@ -110,6 +130,15 @@ class CfgWeapons {
         ACE_barrelLength = 1350;
     };
 	
+	class LIB_DELISLE: LIB_RIFLE {
+        ACE_barrelTwist = 392;
+        ACE_barrelLength = 210;
+    };
+	
+	class LIB_M2_Flamethrower: LIB_RIFLE
+	{
+		ACE_Overheating_JamChance = 0;
+	};
 	
     class Rifle_Long_Base_F: Rifle_Base_F {};
     class LIB_LMG: Rifle_Long_Base_F {
@@ -265,12 +294,14 @@ class CfgWeapons {
         ace_overpressure_angle = 60;
         ace_overpressure_range = 10;
         ace_overpressure_damage = 0.4;
+		ace_reloadlaunchers_enabled = 1;
     };
 
     class LIB_M1A1_Bazooka: LIB_LAUNCHER {
         ace_overpressure_angle = 60;
         ace_overpressure_range = 10;
         ace_overpressure_damage = 0.4;
+		ace_reloadlaunchers_enabled = 1;
     };
 
 
@@ -362,6 +393,12 @@ class CfgWeapons {
         ace_overpressure_damage = 0.4;
     };
 
+	class LIB_K51_L54: LIB_TankCannon_base {
+        ace_overpressure_angle = 80;
+        ace_overpressure_range = 10;
+        ace_overpressure_damage = 0.2;
+	};
+	
 	// I44
 	class LIB_M6_L53: LIB_TankCannon_base {
         ace_overpressure_angle = 60;
@@ -414,15 +451,15 @@ class CfgWeapons {
         scope = 2;
         displayName = "Detonator";
         descriptionShort = "Used to remotely trigger explosives";
-        picture = "\WW2\Assets_t\Weapons\Misc_t\Equipment\Mines\gear_Ladung_charger_ca.paa";
-        model = "\WW2\Assets_m\Weapons\Mines_m\Inv\WW2_Ladung_pm_inv.p3d";
+        picture = "\WW2\Assets_t\Weapons\Equipment_t\Mines\gear_Ladung_charger_ca.paa";
+        model = "\WW2\Assets_m\Weapons\Mines_m\Inv\IF_Ladung_pm_inv.p3d";
         ace_explosives_Range = 100;
         ace_explosives_Detonator = 1;
         ace_explosives_triggerType = "LIB_LadungPM";
         class ItemInfo: ACE_ExplosiveItem {
             allowedSlots[] = { 901 };
             mass = 20;
-            uniformModel = "\WW2\Assets_m\Weapons\Mines_m\Inv\WW2_Ladung_pm_inv.p3d";
+            uniformModel = "\WW2\Assets_m\Weapons\Mines_m\Inv\IF_Ladung_pm_inv.p3d";
         };
     };
 
