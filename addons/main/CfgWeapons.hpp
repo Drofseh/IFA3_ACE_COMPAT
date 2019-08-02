@@ -36,7 +36,16 @@ class CfgWeapons {
         ACE_barrelLength = 127.0;
     };
 
-
+	class LIB_Webley_mk6: LIB_PISTOL {
+        ACE_barrelTwist = 406.4; //unknown
+        ACE_barrelLength = 152.0;
+    };
+	
+	class LIB_Welrod_mk1: LIB_PISTOL {
+        ACE_barrelTwist = 406.4; //unknown
+        ACE_barrelLength = 83.0;
+    };
+	
     class Rifle_Base_F;
     class Rifle_Short_Base_F: Rifle_Base_F {};
     class LIB_SMG: Rifle_Short_Base_F {
@@ -71,6 +80,10 @@ class CfgWeapons {
         ACE_barrelLength = 270;
     };
 
+	class LIB_Sten_Mk2: LIB_SMG {
+        ACE_barrelTwist = 254;
+        ACE_barrelLength = 196;
+	};
 	
     class LIB_RIFLE: Rifle_Base_F {
         ACE_Overheating_Dispersion = 0.75;
@@ -111,6 +124,18 @@ class CfgWeapons {
         ACE_barrelTwist = 254; //unknown set to 1:10
         ACE_barrelLength = 550;
     };
+	
+	class LIB_G41 : LIB_RIFLE {
+		ACE_barrelTwist=240; //unknown set to same as K98
+		ACE_barrelLength=546;
+		ACE_twistDirection=1;
+	};
+	
+	class LIB_FG42G : LIB_RIFLE {
+		ACE_barrelLength=500;
+		ACE_barrelTwist=240; //unknown set to same as K98
+		ACE_twistDirection=1;
+	};
 
     class LIB_M1_Garand: LIB_RIFLE {
         ACE_Overheating_JamChance = 0.0003;
@@ -135,8 +160,18 @@ class CfgWeapons {
         ACE_barrelLength = 210;
     };
 	
-	class LIB_M2_Flamethrower: LIB_RIFLE
-	{
+	class LIB_LeeEnfield_No4: LIB_RIFLE {
+        ACE_barrelTwist = 254;
+        ACE_barrelLength = 640.08;
+	};
+	
+	class LIB_LeeEnfield_No1: LIB_LeeEnfield_No4 {};
+	
+	class LIB_PIAT_Rifle: LIB_RIFLE {
+		ACE_Overheating_JamChance = 0;
+	};
+	
+	class LIB_M2_Flamethrower: LIB_RIFLE {
 		ACE_Overheating_JamChance = 0;
 	};
 	
@@ -180,6 +215,12 @@ class CfgWeapons {
         ACE_overheating_allowSwapBarrel = 0;
     };
 
+	class LIB_Bren_Mk2: LIB_LMG {
+        ACE_barrelTwist = 254; //unknown set to 1:10
+        ACE_barrelLength = 635;
+        ACE_overheating_allowSwapBarrel = 1;
+    };
+	
     class LIB_SRIFLE: Rifle_Long_Base_F {
         ACE_Overheating_Dispersion = 0.75;
         ACE_Overheating_SlowdownFactor = 1;
@@ -229,6 +270,15 @@ class CfgWeapons {
         ACE_scopeHeightAboveRail = 3.8;
     };
 
+	class LIB_LeeEnfield_No4_Scoped: LIB_SRIFLE {
+        ACE_barrelTwist = 254;
+        ACE_barrelLength = 640.08;
+        ACE_scopeZeroRange = 100;
+        ACE_ScopeAdjust_Vertical[] = {0, 24};
+        ACE_ScopeAdjust_Horizontal[] = {-5, 5};
+        ACE_ScopeAdjust_VerticalIncrement = 0.1;
+        ACE_ScopeAdjust_HorizontalIncrement = 0.1; 
+	};
 
     class MGun;
     class LIB_MLMG_base;
@@ -274,21 +324,38 @@ class CfgWeapons {
         ACE_barrelLength = 610;
     };
 	
+	class LIB_Bren_Mk2_coax: LIB_TankMGun_base {
+        ACE_barrelTwist = 254; //unknown set to 1:10
+        ACE_barrelLength = 635;
+    };
+	
+	class LIB_Besa_coax: LIB_TankMGun_base {
+        ACE_barrelTwist = 101.6;
+        ACE_barrelLength = 740;
+        ACE_overheating_allowSwapBarrel = 1;
+    };
+	
+	
     class LIB_LAUNCHER;
     class LIB_PzFaust_30m: LIB_LAUNCHER {
-        ACE_UsedTube = "LIB_PzFaust_30m_used";
-        magazines[] = { "LIB_PzFaust_PreloadedMissileDummy" };  // The dummy magazine
+        // ACE_UsedTube = "LIB_PzFaust_30m_used";
+        // magazines[] = { "LIB_PzFaust_PreloadedMissileDummy" };
         ace_overpressure_angle = 45;
         ace_overpressure_range = 5;
         ace_overpressure_damage = 0.3;
     };
+    // class LIB_PzFaust_60m: LIB_PzFaust_30m {
+        // ACE_UsedTube = "LIB_PzFaust_60m_used";
+    // };
+    // class LIB_Faustpatrone: LIB_PzFaust_30m {};
 
-    class LIB_PzFaust_30m_used: LIB_PzFaust_30m {
-        scope = 1;
-        ACE_isUsedLauncher = 1;
-        magazines[] = { "LIB_PzFaust_FiredMissileDummy" };  // This will disable the used launcher class from being fired again
-        weaponPoolAvailable = 0;
-    };
+    // class LIB_PzFaust_30m_used: LIB_PzFaust_30m {
+        // scope = 1;
+        // ACE_isUsedLauncher = 1;
+        // magazines[] = { "LIB_PzFaust_FiredMissileDummy" };
+        // weaponPoolAvailable = 0;
+    // };
+    // class LIB_PzFaust_60m_used: LIB_PzFaust_30m_used {};
 
     class LIB_RPzB: LIB_LAUNCHER {
         ace_overpressure_angle = 60;
@@ -304,21 +371,36 @@ class CfgWeapons {
 		ace_reloadlaunchers_enabled = 1;
     };
 
+	class LIB_PIAT: LIB_LAUNCHER {
+        ace_overpressure_angle = 0;
+        ace_overpressure_range = 0;
+        ace_overpressure_damage = 0;
+		ace_reloadlaunchers_enabled = 0;
+	};
+	
+	class Launcher_Base_F;
+	class LIB_Bagpipes: Launcher_Base_F {
+        ace_overpressure_angle = 0;
+        ace_overpressure_range = 0;
+        ace_overpressure_damage = 0;
+		ace_reloadlaunchers_enabled = 0;
+	};
 
     class H_LIB_HelmetB;
-    class H_LIB_GER_LW_PilotHelmet: H_LIB_HelmetB {
+    class H_LIB_Hat;
+    class H_LIB_GER_LW_PilotHelmet: H_LIB_Hat {
         ACE_Protection = 1;
         ace_hearing_protection = 0.50;
         ace_hearing_lowerVolume = 0.60;
     };
 
-    class H_LIB_SOV_TankHelmet: H_LIB_HelmetB {
+    class H_LIB_SOV_TankHelmet: H_LIB_Hat {
         ACE_Protection = 1;
         ace_hearing_protection = 0.50;
         ace_hearing_lowerVolume = 0.60;
     };
 
-    class H_LIB_SOV_PilotHelmet: H_LIB_HelmetB {
+    class H_LIB_SOV_PilotHelmet: H_LIB_Hat {
         ACE_Protection = 1;
         ace_hearing_protection = 0.50;
         ace_hearing_lowerVolume = 0.60;
@@ -332,107 +414,119 @@ class CfgWeapons {
 
     class LIB_TankCannon_base;
 
-    class LIB_D25T: LIB_TankCannon_base {
+    class LIB_D25T_base: LIB_TankCannon_base {
         ace_overpressure_angle = 90;
         ace_overpressure_range = 15;
         ace_overpressure_damage = 0.4;
     };
 
-    class LIB_KwK40_L48: LIB_TankCannon_base {
+    class LIB_KwK40_L48_base: LIB_TankCannon_base {
         ace_overpressure_angle = 90;
         ace_overpressure_range = 15;
         ace_overpressure_damage = 0.4;
     };
 
-    class LIB_KwK42_L70: LIB_TankCannon_base {
+    class LIB_KwK42_L70_base: LIB_TankCannon_base {
         ace_overpressure_angle = 90;
         ace_overpressure_range = 15;
         ace_overpressure_damage = 0.4;
     };
 
-    class LIB_KwK43_L71: LIB_TankCannon_base {
+    class LIB_KwK43_L71_base: LIB_TankCannon_base {
         ace_overpressure_angle = 90;
         ace_overpressure_range = 15;
         ace_overpressure_damage = 0.4;
     };
 
-    class LIB_KwK36_L56: LIB_TankCannon_base {
+    class LIB_KwK36_L56_base: LIB_TankCannon_base {
         ace_overpressure_angle = 90;
         ace_overpressure_range = 15;
         ace_overpressure_damage = 0.4;
     };
 
-    class LIB_F34: LIB_TankCannon_base {
+    class LIB_F34_base: LIB_TankCannon_base {
         ace_overpressure_angle = 90;
         ace_overpressure_range = 15;
         ace_overpressure_damage = 0.4;
     };
 
-    class LIB_ZIS_S_53: LIB_TankCannon_base {
+    class LIB_ZIS_S_53_base: LIB_TankCannon_base {
         ace_overpressure_angle = 90;
         ace_overpressure_range = 15;
         ace_overpressure_damage = 0.4;
     };
 
     class LIB_StaticGunCannon_base;
-    class LIB_ZIS3: LIB_StaticGunCannon_base {
+    class LIB_ZIS3_base: LIB_StaticGunCannon_base {
         ace_overpressure_angle = 90;
         ace_overpressure_range = 15;
         ace_overpressure_damage = 0.4;
     };
 
-    class LIB_M3_L40: LIB_TankCannon_base {
+    class LIB_M3_L40_base: LIB_TankCannon_base {
         ace_overpressure_angle = 90;
         ace_overpressure_range = 15;
         ace_overpressure_damage = 0.4;
     };
 
-    class LIB_Pak40: LIB_StaticGunCannon_base {
+    class LIB_Pak40_base: LIB_StaticGunCannon_base {
         ace_overpressure_angle = 90;
         ace_overpressure_range = 15;
         ace_overpressure_damage = 0.4;
     };
 
-	class LIB_K51_L54: LIB_TankCannon_base {
+	class LIB_K51_L54_base: LIB_TankCannon_base {
         ace_overpressure_angle = 80;
         ace_overpressure_range = 10;
         ace_overpressure_damage = 0.2;
 	};
 	
-	// I44
-	class LIB_M6_L53: LIB_TankCannon_base {
+    class LIB_OQF_75_base: LIB_TankCannon_base {
+        ace_overpressure_angle = 90;
+        ace_overpressure_range = 15;
+        ace_overpressure_damage = 0.4;
+    };
+	
+	class LIB_OQF_57_base: LIB_TankCannon_base {
         ace_overpressure_angle = 60;
         ace_overpressure_range = 5;
         ace_overpressure_damage = 0.4;		
 	};
 	
-	class LIB_M1A2_L55: LIB_TankCannon_base {
+	// I44
+	class LIB_M6_L53_base: LIB_TankCannon_base {
+        ace_overpressure_angle = 60;
+        ace_overpressure_range = 5;
+        ace_overpressure_damage = 0.4;		
+	};
+	
+	class LIB_M1A2_L55_base: LIB_TankCannon_base {
         ace_overpressure_angle = 90;
         ace_overpressure_range = 15;
         ace_overpressure_damage = 0.4;		
 	};
 	
-	class LIB_QF17_L55: LIB_TankCannon_base {
+	class LIB_QF17_L55_base: LIB_TankCannon_base {
         ace_overpressure_angle = 90;
         ace_overpressure_range = 15;
         ace_overpressure_damage = 0.4;		
 	};
 	
-	class LIB_KwK30_L55: LIB_TankCannon_base {
+	class LIB_KwK30_L55_base: LIB_TankCannon_base {
         ace_overpressure_angle = 40;
         ace_overpressure_range = 4;
         ace_overpressure_damage = 0.1;				
 	};
 	
-	class LIB_KwK38_L55: LIB_KwK30_L55 {};
+	class LIB_KwK38_L55_base: LIB_KwK30_L55_base {};
 	
-	class LIB_KwK39_L60: LIB_TankCannon_base {
+	class LIB_KwK39_L60_base: LIB_TankCannon_base {
         ace_overpressure_angle = 90;
         ace_overpressure_range = 15;
         ace_overpressure_damage = 0.4;		
 	};
 	
-	class LIB_leFH18_L28: LIB_TankCannon_base {
+	class LIB_LeFH18_base: LIB_StaticGunCannon_base {
         ace_overpressure_angle = 90;
         ace_overpressure_range = 15;
         ace_overpressure_damage = 0.4;		

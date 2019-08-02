@@ -5,7 +5,7 @@ class CfgVehicles {
 	class LIB_GrWr34: LIB_GER_Mortar_base {scope=1;};
 	class LIB_US_Mortar_base;
 	class LIB_M2_60: LIB_US_Mortar_base {scope=1;};
-	
+
 	class StaticWeapon;
 	class StaticMortar: StaticWeapon
 	{
@@ -20,30 +20,30 @@ class CfgVehicles {
 		};
 	};
 	class LIB_Mortar_base_ACE: Mortar_01_base_F {
-		scope = 1;
+		scope = 0;
 		expansion = 1;
 		transportSoldier = 1;
 		cargoAction[] = {"LIB_mortar_gunner_2"};
-		mapSize = 3;	
+		mapSize = 3;
 		class Library
 		{
 			libTextDesc = "";
 		};
-        class Eventhandlers: Eventhandlers
+		class Eventhandlers: Eventhandlers
 		{
 			class IFA3_Weapons_Static_fnc_fired_EH
 			{
 				fired = "_this call LIB_Weapons_Static_fnc_fired_EH";
 			};
-            class IFA3_Weapons_Static
+			class IFA3_Weapons_Static
 			{
 				init = "[(_this select 0),[],true] spawn LIB_Weapons_Static_fnc_init_EH";
 			};
-            class IFA3_Weapons_Static_fnc_GetOut_EH
+			class IFA3_Weapons_Static_fnc_GetOut_EH
 			{
 				GetOut = "[(_this select 0),(_this select 1),(_this select 2),'AmovPknlMstpSnonWnonDnon'] call LIB_Weapons_Static_fnc_GetOut_EH";
 			};
-		};		
+		};
 		class Turrets: Turrets
 		{
 			class MainTurret: MainTurret
@@ -68,6 +68,7 @@ class CfgVehicles {
 	};
 	class LIB_GrWr34_ACE: LIB_Mortar_base_ACE {
 		scope = 2;
+		scopeCurator = 2;
 		side = 1;
 		faction = "LIB_WEHRMACHT";
 		crew = "LIB_GER_gun_crew";
@@ -75,11 +76,11 @@ class CfgVehicles {
 		displayName = "$STR_LIB_DN_GRWR34_ACE";
 		model = "\WW2\Assets_m\Weapons\Mortars_m\IF_GrWr34.p3d";
 		icon = "\WW2\Assets_t\Weapons\Icons_t\Mortars\Icon_GrWr34_ca.paa";
-		picture = "\WW2\Assets_t\Vehicles\Pictures_t\GrWr34_ca.paa";
+		picture = "\WW2\Assets_t\Vehicles\Pictures_t\LIB_GrWr34_ca.paa";
 		class assembleInfo: assembleInfo
 		{
-            LIB_dissasembleTo[] = {"LIB_GrWr34_Barrel","LIB_GrWr34_Tripod_Deployed"};
-            deployTime = 12;
+			LIB_dissasembleTo[] = {"LIB_GrWr34_Barrel","LIB_GrWr34_Tripod_Deployed"};
+			deployTime = 12;
 		};
 		class Turrets: Turrets
 		{
@@ -133,6 +134,7 @@ class CfgVehicles {
 	};
 	class LIB_BM37_ACE: LIB_Mortar_base_ACE {
 		scope = 2;
+		scopeCurator = 2;
 		side = 0;
 		faction = "LIB_RKKA";
 		crew = "LIB_SOV_gun_crew";
@@ -140,11 +142,11 @@ class CfgVehicles {
 		displayName = "$STR_LIB_DN_BM37_ACE";
 		model = "\WW2\Assets_m\Weapons\Mortars_m\IF_Bm37.p3d";
 		icon = "\WW2\Assets_t\Weapons\Icons_t\Mortars\Icon_Bm37_ca.paa";
-		picture = "\WW2\Assets_t\Vehicles\Pictures_t\BM37_ca.paa";
+		picture = "\WW2\Assets_t\Vehicles\Pictures_t\LIB_BM37_ca.paa";
 		class assembleInfo: assembleInfo
 		{
-            LIB_dissasembleTo[] = {"LIB_BM37_Barrel","LIB_BM37_Tripod_Deployed"};
-            deployTime = 13;
+			LIB_dissasembleTo[] = {"LIB_BM37_Barrel","LIB_BM37_Tripod_Deployed"};
+			deployTime = 13;
 		};
 		class Turrets: Turrets
 		{
@@ -198,6 +200,7 @@ class CfgVehicles {
 	};
 	class LIB_M2_60_ACE: LIB_Mortar_base_ACE {
 		scope = 2;
+		scopeCurator = 2;
 		side = 2;
 		faction = "LIB_US_ARMY";
 		crew = "LIB_US_corporal";
@@ -208,8 +211,8 @@ class CfgVehicles {
 		picture = "\WW2\Assets_t\Vehicles\Pictures_t\LIB_M2_60_ca.paa";
 		class assembleInfo: assembleInfo
 		{
-            LIB_dissasembleTo[] = {"LIB_M2_60_Barrel","LIB_M2_60_Tripod_Deployed"};
-            deployTime = 8;			
+			LIB_dissasembleTo[] = {"LIB_M2_60_Barrel","LIB_M2_60_Tripod_Deployed"};
+			deployTime = 8;
 		};
 		class Turrets: Turrets
 		{
@@ -218,7 +221,7 @@ class CfgVehicles {
 				weapons[] = {"LIB_M2_60_ACE"};
 				gunnerOpticsModel = "\WW2\Assets_m\Vehicles\Optics_m\WW2_M4_Mortar_Sight.p3d";
 			};
-		};	
+		};
 		class ACE_Actions: ACE_Actions
 		{
 			class ace_mk6mortar_unloadMagazine
@@ -260,40 +263,48 @@ class CfgVehicles {
 					icon = "";
 				};
 			};
-		};		
+		};
 	};
-	
+
 	class B_LIB_AssaultPack_Base;
 	class LIB_Tripod_Bag: B_LIB_AssaultPack_Base {
-		class assembleInfo; 
+		class assembleInfo;
 	};
 	class LIB_BM37_Tripod_Deployed: LIB_Tripod_Bag {
-        class assembleInfo: assembleInfo {
-            class LIB_BM37_Barrel {
-                deployTime = 10;
-                assembleTo = "LIB_BM37_ACE";
-            };
+		class assembleInfo: assembleInfo {
+			class LIB_BM37_Barrel {
+				deployTime = 10;
+				assembleTo = "LIB_BM37_ACE";
+			};
 		};
 	};
 	class LIB_GrWr34_Tripod_Deployed: LIB_Tripod_Bag {
 		class assembleInfo: assembleInfo {
-            class LIB_GrWr34_Barrel {
-                deployTime = 10;
-                assembleTo = "LIB_GrWr34_ACE";
-            };
+			class LIB_GrWr34_Barrel {
+				deployTime = 10;
+				assembleTo = "LIB_GrWr34_ACE";
+			};
 		};
 	};
-	class LIB_M2_60_Tripod_Deployed: LIB_Tripod_Bag	{
+	class LIB_M2_60_Tripod_Deployed: LIB_Tripod_Bag {
 		class assembleInfo: assembleInfo {
-            class LIB_M2_60_Barrel {
-                deployTime = 8;
-                assembleTo = "LIB_M2_60_ACE";
-            };
+			class LIB_M2_60_Barrel {
+				deployTime = 8;
+				assembleTo = "LIB_M2_60_ACE";
+			};
 		};
 	};
-	
-	class NATO_Box_Base;
-	class LIB_AmmoOrd_F: NATO_Box_Base	{
+
+	class LIB_ReammoBox_base;
+	class LIB_AmmoOrdnance_base: LIB_ReammoBox_base {
+        ace_dragging_cancarry = 1;
+        ace_dragging_carryposition[] = {0,1.2,0};
+        ace_dragging_carryDirection = 0;
+
+        ace_dragging_canDrag = 1;
+        ace_dragging_dragposition[] = {0,1.2,0};
+		ace_dragging_dragdirection = 0;
+		
 		class TransportMagazines;
 		class eventHandlers {
 			init = "_this call compile preProcessFileLineNumbers ""\z\ifa3_comp_ace\addons\mortar\functions\fnc_init.sqf"";";
@@ -314,7 +325,7 @@ class CfgVehicles {
 					priority = 5;
 				};
 			};
-			
+
 			class ACE_CloseLid {
 				selection = "rotation_action_point";
 				distance = 2;
@@ -326,7 +337,7 @@ class CfgVehicles {
 				priority = 5;
 
 			};
-			
+
 			class ACE_Round_1_Take {
 				displayName = "$STR_ace_ifa3mortar_take";
 				selection = "round_1_action_point";
@@ -438,7 +449,9 @@ class CfgVehicles {
 			};
 		};
 	};
-	class LIB_Box_82mm_Mo_HE: LIB_AmmoOrd_F {
+
+	class LIB_Box_82mm_Mo_base: LIB_AmmoOrdnance_base {};
+	class LIB_Box_82mm_Mo_HE: LIB_Box_82mm_Mo_base {
 		class TransportMagazines {
 			class _xx_LIB_1rnd_82mmHE_BM37
 			{
@@ -452,7 +465,7 @@ class CfgVehicles {
 			};
 		};
 	};
-	class LIB_Box_82mm_Mo_Smoke: LIB_Box_82mm_Mo_HE {
+	class LIB_Box_82mm_Mo_Smoke: LIB_Box_82mm_Mo_base {
 		scope = 2;
 		scopeCurator = 2;
 		class TransportMagazines {
@@ -468,7 +481,7 @@ class CfgVehicles {
 			};
 		};
 	};
-	class LIB_Box_82mm_Mo_Illum: LIB_Box_82mm_Mo_HE {
+	class LIB_Box_82mm_Mo_Illum: LIB_Box_82mm_Mo_base {
 		scope = 2;
 		scopeCurator = 2;
 		class ACE_Actions: ACE_Actions {
@@ -477,7 +490,7 @@ class CfgVehicles {
 			};
 		};
 	};
-	class LIB_Box_81mm_Mo_HE: LIB_Box_82mm_Mo_HE {
+	class LIB_Box_81mm_Mo_HE: LIB_Box_82mm_Mo_base {
 		scope = 2;
 		class TransportMagazines {
 			class _xx_LIB_1rnd_81mmHE_GRWR34
@@ -492,7 +505,7 @@ class CfgVehicles {
 			};
 		};
 	};
-	class LIB_Box_81mm_Mo_Smoke: LIB_Box_81mm_Mo_HE {	
+	class LIB_Box_81mm_Mo_Smoke: LIB_Box_82mm_Mo_base {
 		scope = 2;
 		scopeCurator = 2;
 		class TransportMagazines {
@@ -508,7 +521,7 @@ class CfgVehicles {
 			};
 		};
 	};
-	class LIB_Box_81mm_Mo_Illum: LIB_Box_81mm_Mo_HE {
+	class LIB_Box_81mm_Mo_Illum: LIB_Box_82mm_Mo_base {
 		scope = 2;
 		scopeCurator = 2;
 		class ACE_Actions: ACE_Actions {
@@ -517,7 +530,8 @@ class CfgVehicles {
 			};
 		};
 	};
-	class LIB_Box_60mm_Mo_HE: LIB_Box_82mm_Mo_HE {
+	class LIB_Box_60mm_Mo_base: LIB_AmmoOrdnance_base {};
+	class LIB_Box_60mm_Mo_HE: LIB_Box_60mm_Mo_base {
 		scope = 2;
 		scopeCurator = 2;
 		class TransportMagazines {
@@ -533,7 +547,7 @@ class CfgVehicles {
 			};
 		};
 	};
-	class LIB_Box_60mm_Mo_Smoke: LIB_Box_60mm_Mo_HE {	
+	class LIB_Box_60mm_Mo_Smoke: LIB_Box_60mm_Mo_base {
 		scope = 2;
 		scopeCurator = 2;
 		class TransportMagazines {
@@ -549,7 +563,7 @@ class CfgVehicles {
 			};
 		};
 	};
-	class LIB_Box_60mm_Mo_Illum: LIB_Box_60mm_Mo_HE {
+	class LIB_Box_60mm_Mo_Illum: LIB_Box_60mm_Mo_base {
 		scope = 2;
 		scopeCurator = 2;
 		class ACE_Actions: ACE_Actions {

@@ -98,6 +98,18 @@ class CfgVehicles {
     class LIB_LCVP: LIB_Boat_base {
         ace_refuel_fuelCapacity = 500;
     };
+	
+	class LIB_LCM3: LIB_Boat_base {
+        ace_refuel_fuelCapacity = 500;
+    };
+	
+	class LIB_LCI: LIB_Boat_base {
+        ace_refuel_fuelCapacity = 173587;
+    };
+	
+	class LIB_LCA: LIB_Boat_base {
+        ace_refuel_fuelCapacity = 290;
+    };
 
     class LIB_StaticCannon_base;
     class LIB_Zis3_base: LIB_StaticCannon_base {
@@ -196,8 +208,13 @@ class CfgVehicles {
         ace_hasReserveParachute = 1;
         ace_reserveParachute = "ACE_ReserveParachute";
     };
-
-
+	class Thing;
+	class LIB_ParachuteLanded_base: Thing
+	{
+		ace_hasReserveParachute = 0;
+        ace_reserveParachute = "";
+	};
+	
     class LIB_Plane_base;
     class LIB_SU_Plane_base: LIB_Plane_base {};
     class LIB_GER_Plane_base: LIB_Plane_base {};
@@ -234,88 +251,6 @@ class CfgVehicles {
         ace_refuel_fuelCapacity = 0;
     };
 
-	class ThingX;
-	class ace_cookoff_Turret_JS2_43: ThingX {
-		author = "AWAR";
-		_generalMacro = "ace_cookoff_Turret_JS2_43";
-		scope = 1;
-		displayName = "$STR_ace_cookoff_generic_turret_wreck";
-		model = "\WW2\Assets_m\Vehicles\Tanks_m\Proxy\IF_Js2_43_destruct_tower.p3d";
-		icon = "\ww2\assets_t\vehicles\icons_t\icon_Js2_43_ca.paa";
-	};
-	class ace_cookoff_Turret_M4A3_75: ThingX {
-		author = "AWAR";
-		_generalMacro = "ace_cookoff_Turret_M4A3_75";
-		scope = 1;
-		displayName = "$STR_ace_cookoff_generic_turret_wreck";
-		model = "\WW2\Assets_m\Vehicles\Tanks_m\Proxy\IF_M4A3_75_destruct_tower.p3d";
-		icon = "\ww2\assets_t\vehicles\icons_t\icon_M4A3_75_ca.paa";
-	};
-	class ace_cookoff_Turret_PzKpfwIV_H: ThingX {
-		author = "AWAR";
-		_generalMacro = "ace_cookoff_Turret_PzKpfwIV_H";
-		scope = 1;
-		displayName = "$STR_ace_cookoff_generic_turret_wreck";
-		model = "\WW2\Assets_m\Vehicles\Tanks_m\Proxy\IF_PzKpfwIV_H_destruct_tower.p3d";
-		icon = "\ww2\assets_t\vehicles\icons_t\icon_PzKpfwIV_H_ca.paa";
-	};
-	class ace_cookoff_Turret_PzKpfwV: ThingX {
-		author = "AWAR";
-		_generalMacro = "ace_cookoff_Turret_PzKpfwV";
-		scope = 1;
-		displayName = "$STR_ace_cookoff_generic_turret_wreck";
-		model = "\WW2\Assets_m\Vehicles\Tanks_m\Proxy\IF_PzKpfwV_destruct_tower.p3d";
-		icon = "\ww2\assets_t\vehicles\icons_t\icon_PzKpfwV_ca.paa";
-	};
-	class ace_cookoff_Turret_PzKpfwVI_B: ThingX {
-		author = "AWAR";
-		_generalMacro = "ace_cookoff_Turret_PzKpfwVI_B";
-		scope = 1;
-		displayName = "$STR_ace_cookoff_generic_turret_wreck";
-		model = "\WW2\Assets_m\Vehicles\Tanks_m\Proxy\IF_PzKpfwVI_B_destruct_tower.p3d";
-		icon = "\ww2\assets_t\vehicles\icons_t\icon_PzKpfwVI_b_ca.paa";
-	};
-	class ace_cookoff_Turret_PzKpfwVI_E: ThingX {
-		author = "AWAR";
-		_generalMacro = "ace_cookoff_Turret_PzKpfwVI_E";
-		scope = 1;
-		displayName = "$STR_ace_cookoff_generic_turret_wreck";
-		model = "\WW2\Assets_m\Vehicles\Tanks_m\Proxy\IF_PzKpfwVI_E_Destruct_Tower.p3d";
-		icon = "\ww2\assets_t\vehicles\icons_t\icon_PzKpfwVI_e_ca.paa";
-	};
-	class ace_cookoff_Turret_StuG_III_G: ThingX {
-		author = "AWAR";
-		_generalMacro = "ace_cookoff_Turret_StuG_III_G";
-		scope = 1;
-		displayName = "$STR_ace_cookoff_generic_turret_wreck";
-		model = "\WW2\Assets_m\Vehicles\Tanks_m\Proxy\IF_StuG_III_G_Tower.p3d";
-		icon = "\ww2\assets_t\vehicles\icons_t\icon_StuG_III_G_ca.paa";
-	};
-	class ace_cookoff_Turret_SU85: ThingX {
-		author = "AWAR";
-		_generalMacro = "ace_cookoff_Turret_SU85";
-		scope = 1;
-		displayName = "$STR_ace_cookoff_generic_turret_wreck";
-		model = "\WW2\Assets_m\Vehicles\Tanks_m\Proxy\IF_SU85_destruct_tower.p3d";
-		icon = "\ww2\assets_t\vehicles\icons_t\icon_SU85_ca.paa";
-	};
-	class ace_cookoff_Turret_T34_76: ThingX {
-		author = "AWAR";
-		_generalMacro = "ace_cookoff_Turret_T34_76";
-		scope = 1;
-		displayName = "$STR_ace_cookoff_generic_turret_wreck";
-		model = "\WW2\Assets_m\Vehicles\Tanks_m\Proxy\IF_T34_76_destruct_tower.p3d";
-		icon = "\ww2\assets_t\vehicles\icons_t\icon_T34_76_ca.paa";
-	};
-	class ace_cookoff_Turret_T34_85: ThingX {
-		author = "AWAR";
-		_generalMacro = "ace_cookoff_Turret_T34_85";
-		scope = 1;
-		displayName = "$STR_ace_cookoff_generic_turret_wreck";
-		model = "\WW2\Assets_m\Vehicles\Tanks_m\Proxy\IF_T34_85_destruct_tower.p3d";
-		icon = "\ww2\assets_t\vehicles\icons_t\icon_T34_85_ca.paa";
-	};
-
     class Tank: LandVehicle
 	{
 		class NewTurret;
@@ -343,7 +278,7 @@ class CfgVehicles {
         ace_refuel_fuelCapacity = 820;
         ace_cookoff_ammoLocation = "HitTurret";
         ace_cookoff_cookoffSelections[] = { "osa_poklop_commander_front" };
-		ace_cookoff_turret[] = {"ace_cookoff_Turret_JS2_43",{0,-1,0}};
+		ace_cookoff_turret[] = {"LIB_JS2_43_Destruct_Tower",{0,-1,0}};
     };
 
     class LIB_PzKpfwIV_H_base: LIB_Tank_base {
@@ -351,20 +286,21 @@ class CfgVehicles {
         ace_refuel_fuelCapacity = 470;
         ace_cookoff_ammoLocation = "HitHull";
         ace_cookoff_cookoffSelections[] = { "hatch_commander" };
-		ace_cookoff_turret[] = {"ace_cookoff_Turret_PzKpfwIV_H",{0,-1,0}};
+		ace_cookoff_turret[] = {"LIB_PzKpfwIV_H_destruct_tower",{0,-1,0}};
     };
 
     class LIB_FlakPanzerIV_Wirbelwind: LIB_PzKpfwIV_H_base {
         ace_cookoff_cookoffSelections[] = { "engine_smoke" };
-		// ace_cookoff_turret[] = {"ace_cookoff_Turret_PzKpfwIV_H",{0,-1,0}};
-    };	
+		ace_cookoff_turret[] = {"",{0,-1,0}};
+		ace_probability = 0.1;
+    };
 	
     class LIB_PzKpfwV_base: LIB_Tank_base {
         ace_repair_hitpointPositions[] = { {"HitHull", {0,2.3,-1}},{"HitEngine", {0,-3,-0.5}},{"HitFuel", {0,-2.3,-0.5}},{"HitLTrack", {-1.4,-0.3,-1.5}},{"HitRTrack", {1.4,-0.3,-1.5}} };
         ace_refuel_fuelCapacity = 720;
         ace_cookoff_ammoLocation = "HitHull";
         ace_cookoff_cookoffSelections[] = { "hatch_commander" };
-		ace_cookoff_turret[] = {"ace_cookoff_Turret_PzKpfwV",{0,-1,0}};
+		ace_cookoff_turret[] = {"LIB_PzKpfwV_Destruct_Tower",{0,-1,0}};
     };
 
     class LIB_PzKpfwVI_B_base: LIB_Tank_base {
@@ -372,7 +308,7 @@ class CfgVehicles {
         ace_refuel_fuelCapacity = 860;
         ace_cookoff_ammoLocation = "HitTurret";
         ace_cookoff_cookoffSelections[] = { "hatch_commander" };
-		ace_cookoff_turret[] = {"ace_cookoff_Turret_PzKpfwVI_B",{0,-1,0}};
+		ace_cookoff_turret[] = {"LIB_PzKpfwVI_B_Destruct_Tower",{0,-1,0}};
     };
 
     class LIB_PzKpfwVI_E_base: LIB_Tank_base {
@@ -380,7 +316,7 @@ class CfgVehicles {
         ace_refuel_fuelCapacity = 540;
         ace_cookoff_ammoLocation = "HitHull";
         ace_cookoff_cookoffSelections[] = { "hatch_commander" };
-		ace_cookoff_turret[] = {"ace_cookoff_Turret_PzKpfwVI_E",{0,-1,0}};
+		ace_cookoff_turret[] = {"LIB_PzKpfwVI_E_Destruct_Tower",{0,-1,0}};
     };
 
     class LIB_StuG_III_G_base: LIB_Tank_base {
@@ -388,7 +324,8 @@ class CfgVehicles {
         ace_refuel_fuelCapacity = 320;
         ace_cookoff_ammoLocation = "HitHull";
         ace_cookoff_cookoffSelections[] = { "hatch_commander" };
-		ace_cookoff_turret[] = {"ace_cookoff_Turret_StuG_III_G",{0,-1,0}};
+		ace_cookoff_turret[] = {"",{0,-1,0}};
+		// ace_cookoff_turret[] = {"LIB_StuG_III_G_Destruct_Tower",{0,-1,0}};
     };
 
     class LIB_T34_76_base: LIB_Tank_base {
@@ -396,7 +333,7 @@ class CfgVehicles {
         ace_refuel_fuelCapacity = 610;
         ace_cookoff_ammoLocation = "HitHull";
         ace_cookoff_cookoffSelections[] = { "hatch_commander" };
-		ace_cookoff_turret[] = {"ace_cookoff_Turret_T34_76",{0,-1,0}};
+		ace_cookoff_turret[] = {"LIB_T34_76_Destruct_Tower",{0,-1,0}};
     };
 
     class LIB_T34_85_base: LIB_Tank_base {
@@ -404,15 +341,15 @@ class CfgVehicles {
         ace_refuel_fuelCapacity = 810;
         ace_cookoff_ammoLocation = "HitTurret";
         ace_cookoff_cookoffSelections[] = { "hatch_commander" };
-		ace_cookoff_turret[] = {"ace_cookoff_Turret_T34_85",{0,-1,0}};
+		ace_cookoff_turret[] = {"LIB_T34_85_Destruct_Tower",{0,-1,0}};
     };
 
     class LIB_M4A3_75_base: LIB_Tank_base {
         ace_repair_hitpointPositions[] = { {"HitHull", {0,0,0}},{"HitEngine", {0,0,0}},{"HitFuel", {0,0,0}},{"HitLTrack", {0,0,0}},{"HitRTrack", {0,0,0}} };
         ace_refuel_fuelCapacity = 660;
         ace_cookoff_ammoLocation = "HitHull";
-        ace_cookoff_cookoffSelections[] = { "hatch_commander" };
-		ace_cookoff_turret[] = {"ace_cookoff_Turret_M4A3_75",{0,-1,0}};
+        ace_cookoff_cookoffSelections[] = { "ace_cookoff_pos" };
+		ace_cookoff_turret[] = {"LIB_M4A3_75_Destruct_Tower",{0,-1,0}};
     };
 
     class LIB_SU85_base: LIB_Tank_base {
@@ -420,7 +357,8 @@ class CfgVehicles {
         ace_refuel_fuelCapacity = 510;
         ace_cookoff_ammoLocation = "HitHull";
         ace_cookoff_cookoffSelections[] = { "hatch_commander" };
-		ace_cookoff_turret[] = {"ace_cookoff_Turret_SU85",{0,-1,0}};
+		ace_cookoff_turret[] = {"",{0,-1,0}};
+		// ace_cookoff_turret[] = {"LIB_T34_85_Destruct_Tower",{0,-1,0}};
     };
 
 	class LIB_SdKfz124_base: LIB_Tank_base {
@@ -428,7 +366,35 @@ class CfgVehicles {
         ace_refuel_fuelCapacity = 170;
         ace_cookoff_ammoLocation = "HitHull";
         ace_cookoff_cookoffSelections[] = { "engine_smoke" };
+		ace_probability = 0.1;
 		ace_cookoff_turret[] = {"",{0,-1,0}};
+    };
+	
+	class LIB_Crusader_Base: LIB_Tank_base {};
+	
+	class LIB_Crusader_Mk3: LIB_Crusader_Base {
+        ace_repair_hitpointPositions[] = { {"HitHull", {0,1.62,-1.2}},{"HitEngine", {0,-2.7,-0.7}},{"HitFuel", {0,-2.2,-0.7}},{"HitLTrack", {-1.2,-1.1,-1.6}},{"HitRTrack", {1.2,-1.1,-1.6}} };
+        ace_refuel_fuelCapacity = 500;
+        ace_cookoff_ammoLocation = "HitHull";
+        ace_cookoff_cookoffSelections[] = { "ace_cookoff_pos" };
+		ace_cookoff_turret[] = {"LIB_Crusader_Mk3_Destruct_Tower",{0,-1,0}};
+    };
+	
+	class LIB_Crusader_Mk1AA: LIB_Crusader_Base {
+        ace_repair_hitpointPositions[] = { {"HitHull", {0,1.62,-1.2}},{"HitEngine", {0,-2.7,-0.7}},{"HitFuel", {0,-2.2,-0.7}},{"HitLTrack", {-1.2,-1.1,-1.6}},{"HitRTrack", {1.2,-1.1,-1.6}} };
+        ace_refuel_fuelCapacity = 500;
+        ace_cookoff_ammoLocation = "HitHull";
+        ace_cookoff_cookoffSelections[] = { "engine_smoke" };
+		ace_cookoff_turret[] = {"",{0,-1,0}};
+		ace_probability = 0.1;
+    };
+	
+	class LIB_Cromwell_Base: LIB_Tank_base {
+        ace_repair_hitpointPositions[] = { {"HitHull", {0,1.62,-1.2}},{"HitEngine", {0,-2.7,-0.7}},{"HitFuel", {0,-2.2,-0.7}},{"HitLTrack", {-1.2,-1.1,-1.6}},{"HitRTrack", {1.2,-1.1,-1.6}} };
+        ace_refuel_fuelCapacity = 500;
+        ace_cookoff_ammoLocation = "HitHull";
+        ace_cookoff_cookoffSelections[] = { "ace_cookoff_pos" };
+		ace_cookoff_turret[] = {"LIB_Cromwell_Mk4_Destruct_Tower",{0,-1,0}};
     };
 	
 	// I44
@@ -457,6 +423,29 @@ class CfgVehicles {
         ace_cookoff_cookoffSelections[] = { "hatchFire_commander" };
 		ace_cookoff_turret[] = {"",{0,-1,0}};
     };
+	
+	class LIB_UniversalCarrier_base: LIB_Tank_base {
+        ace_repair_hitpointPositions[] = { {"HitHull", {0,1.37,-1.08}},{"HitEngine", {0,-4.28,-1}},{"HitFuel", {0,1.64,-1.47}},{"HitLTrack", {-1.3,-1.39,-1.6}},{"HitRTrack", {1.3,-1.39,-1.6}} };
+        ace_refuel_fuelCapacity = 91;
+		ace_probability = 0;
+        ace_cookoff_ammoLocation = "HitTurret";
+        ace_cookoff_cookoffSelections[] = { "engine_smoke" };
+		ace_cookoff_turret[] = {"",{0,-1,0}};
+	};
+	
+	class LIB_Churchill_base: LIB_Tank_base {
+		ace_repair_hitpointPositions[] = { {"HitHull", {0,1.37,-1.08}},{"HitEngine", {0,-4.28,-1}},{"HitFuel", {0,1.64,-1.47}},{"HitLTrack", {-1.3,-1.39,-1.6}},{"HitRTrack", {1.3,-1.39,-1.6}} };
+        ace_refuel_fuelCapacity = 150;
+        ace_cookoff_ammoLocation = "HitHull";
+        ace_cookoff_cookoffSelections[] = { "ace_cookoff_pos" };
+		ace_cookoff_turret[] = {"LIB_Churchill_Mk7_Destruct_Tower",{0,-1,0}};
+	};
+	class LIB_Churchill_Mk7_AVRE: LIB_Churchill_base {
+		ace_cookoff_turret[] = {"LIB_Churchill_Mk7_AVRE_Destruct_Tower",{0,-1,0}};
+	};
+	class LIB_Churchill_Mk7_Howitzer: LIB_Churchill_base {
+		ace_cookoff_turret[] = {"LIB_Churchill_Mk7_Howitzer_Destruct_Tower",{0,-1,0}};
+	};
 	// I44 end
 	
     class Car: LandVehicle {
@@ -510,6 +499,7 @@ class CfgVehicles {
 
     class LIB_opelblitz_ammo: LIB_opelblitz_open_y_camo {
         transportAmmo = 0;
+		ace_rearm_defaultSupply = 1200;
         MACRO_REARM_TRUCK_ACTIONS
     };
 
@@ -520,7 +510,6 @@ class CfgVehicles {
     class LIB_US6_base: LIB_Truck_base {
         ace_refuel_fuelCapacity = 151;
     };
-
 
     class LIB_US6_Unarmed_base: LIB_US6_base {};
     class LIB_US6_Tent: LIB_US6_Unarmed_base {};
@@ -534,6 +523,7 @@ class CfgVehicles {
 
     class LIB_US6_Ammo: LIB_US6_Open_Cargo {
         transportAmmo = 0;
+		ace_rearm_defaultSupply = 1200;
         MACRO_REARM_TRUCK_ACTIONS
     };
 
@@ -542,6 +532,7 @@ class CfgVehicles {
     };
     class LIB_US_GMC_Ammo: LIB_US_GMC_Base {
         transportAmmo = 0;
+		ace_rearm_defaultSupply = 1200;
         MACRO_REARM_TRUCK_ACTIONS
     };
 
@@ -575,16 +566,33 @@ class CfgVehicles {
         ace_refuel_fuelCargo = 10000;
     };
 
-	class LIB_SdKfz222_base: LIB_Truck_base {
+	class LIB_AustinK5_base: LIB_Truck_base {
+		ace_refuel_fuelCapacity = 60;
+	};
+	class LIB_AustinK5_Ammo: LIB_AustinK5_base {
+        transportAmmo = 0;
+		ace_rearm_defaultSupply = 1200;
+        MACRO_REARM_TRUCK_ACTIONS		
+	};
+	
+	class Wheeled_Apc_F;
+	class LIB_ArmouredCar_base: Wheeled_Apc_F {};
+	class LIB_SdKfz222_base: LIB_ArmouredCar_base {
         ace_refuel_fuelCapacity = 100;
     };
 	
-	class LIB_SdKfz234_base: LIB_Truck_base {
+	class LIB_SdKfz234_base: LIB_ArmouredCar_base {
         ace_refuel_fuelCapacity = 240;
     };
 
+	class LIB_SdKfz234_2: LIB_Sdkfz234_base {
+        ace_cookoff_ammoLocation = "HitHull";
+        ace_cookoff_cookoffSelections[] = { "ace_cookoff_pos" };
+		ace_cookoff_turret[] = {"LIB_SdKfz234_2_Destruct_Tower",{0,-1,0}};
+	};
+
 	// I44
-	class LIB_M8_Greyhound_base: LIB_Truck_base {
+	class LIB_M8_Greyhound_base: LIB_ArmouredCar_base {
         ace_refuel_fuelCapacity = 224;
     };
 	// I44 end
@@ -596,6 +604,10 @@ class CfgVehicles {
     class LIB_SdKfz_7_base: LIB_WheeledTracked_APC_base {
         ace_refuel_fuelCapacity = 215;
     };
+	class LIB_SdKfz_7_Ammo: LIB_SdKfz_7_base {
+		transportAmmo = 0;
+		ace_rearm_defaultSupply = 1200;
+	};
 
     class LIB_Halftrack_base: LIB_WheeledTracked_APC_base {
         ace_refuel_fuelCapacity = 230;
@@ -826,7 +838,7 @@ class CfgVehicles {
     };
 
     class ACE_Explosives_Place_LIB_US_M3_MINE: ACE_Explosives_Place {
-        displayName = "$STR_LIB_DN_US_M3";
+        displayName = "$STR_DN_LIB_US_M3";
         model = "\WW2\Assets_m\Weapons\Mines_m\Inv\IF_M3_ap_inv.p3d";
     };
 
@@ -851,12 +863,12 @@ class CfgVehicles {
     };
 
     class ACE_Explosives_Place_LIB_US_M1A1_ATMINE: ACE_Explosives_Place {
-        displayName = "$STR_LIB_DN_US_M1A1_ATMINE";
+        displayName = "$STR_DN_LIB_US_M1A1_ATMINE";
         model = "\WW2\Assets_m\Weapons\Mines_m\Inv\IF_M1a1_at_inv.p3d";
     };
 
     class ACE_Explosives_Place_LIB_US_TNT: ACE_Explosives_Place {
-        displayName = "$STR_LIB_DN_US_TNT_4POUND";
+        displayName = "$STR_DN_LIB_US_TNT_4POUND";
         model = "\WW2\Assets_m\Weapons\Mines_m\Inv\IF_Tnt_4pound_inv.p3d";
     };
 
@@ -876,29 +888,27 @@ class CfgVehicles {
     };
 
 	// Buildings
-    class LIB_Objects_Misc_NonStrategic_base;
-    class LIB_Objects_Misc_Things_base;
-    class LIB_Objects_Structures_Buildings_base;
-    class I44_SimpleHouse_base;
-    class Land_WW2_wire_1 : LIB_Objects_Misc_NonStrategic_base {
+    class LIB_Objects_Wire_base;
+    class LIB_Objects_Fences_base;
+    class Land_WW2_wire_1: LIB_Objects_Wire_base {
 		ace_logistics_wirecutter_isFence = 1;
 	};
-    class Land_I44_Misc_Vine_Fence : LIB_Objects_Misc_Things_base {
+    class Land_I44_Misc_Vine_Fence: LIB_Objects_Fences_base {
 		ace_logistics_wirecutter_isFence = 1;
 	};
-    class Land_I44_Misc_Vine_Fence_Half : LIB_Objects_Misc_Things_base {
+    class Land_I44_Misc_Vine_Fence_Half: LIB_Objects_Fences_base {
 		ace_logistics_wirecutter_isFence = 1;
 	};
-    class Land_I44_Buildings_Barbedwire2 : LIB_Objects_Structures_Buildings_base {
+    class Land_I44_Buildings_Barbedwire2: LIB_Objects_Wire_base {
 		ace_logistics_wirecutter_isFence = 1;
 	};
-    class Land_I44_Buildings_Barbedwire : LIB_Objects_Structures_Buildings_base {
+    class Land_I44_Buildings_Barbedwire: LIB_Objects_Wire_base {
 		ace_logistics_wirecutter_isFence = 1;
 	};
-    class Land_I44_bwf_6_mlod : I44_SimpleHouse_base {
+    class Land_I44_bwf_6_mlod: LIB_Objects_Wire_base {
 		ace_logistics_wirecutter_isFence = 1;
 	};
-    class Land_WW2_wire_3 : Land_WW2_wire_1 {
+    class Land_WW2_wire_3: LIB_Objects_Wire_base {
 		ace_logistics_wirecutter_isFence = 1;
 	};
 };
